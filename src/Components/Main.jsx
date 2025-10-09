@@ -1,5 +1,7 @@
 import React from "react";
+// Assuming ../output.css is your compiled Tailwind CSS
 import "../output.css";
+
 // --- Utility Constants (Mimicking Tailwind Theme) ---
 const PRIMARY_COLOR_TEXT = "text-[#FF7F00]";
 const PRIMARY_COLOR_BG = "bg-[#FF7F00]";
@@ -270,7 +272,7 @@ const Main = () => {
         </div>
       </section>
 
-      {/* --- Meet the CatchUp Team Section --- */}
+      {/* --- Meet the CatchUp Team Section (FIXED) --- */}
       <section id="team" className="py-16 md:py-20 px-4 md:px-12 text-center">
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
@@ -280,19 +282,16 @@ const Main = () => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-xl mx-auto mt-10">
           <div className="text-center">
-            {/* CORRECTION: Changed w-50 h-50 to standard w-32 h-32 */}
+            {/* FIX 1: ADDED mx-auto to center the circular div within its grid column */}
             <div
               className={`w-32 h-32 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
-              {/* Added w-full h-full object-cover to ensure image fills circle */}
-              <span>
-                {" "}
-                <img
-                  src="./princi.jpg"
-                  alt="Principal Sir"
-                  className="w-full h-full object-cover"
-                />{" "}
-              </span>
+              {/* FIX 2: Removed <span> wrapper and added object-cover/rounded-full to image */}
+              <img
+                src="./princi.jpg"
+                alt="Principal Sir"
+                className="w-full h-full object-cover rounded-full"
+              />
             </div>
             <h4 className="text-lg font-semibold mt-1">
               {" "}
@@ -304,19 +303,16 @@ const Main = () => {
             </p>
           </div>
           <div className="text-center">
-            {/* CORRECTION: Changed w-50 h-50 to standard w-32 h-32 */}
+            {/* FIX 1: ADDED mx-auto to center the circular div within its grid column */}
             <div
               className={`w-32 h-32 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
-              {/* Added w-full h-full object-cover to ensure image fills circle */}
-              <span>
-                {" "}
-                <img
-                  src="./raghuSir.jpg"
-                  alt="Raghavendra Sir"
-                  className="w-full h-full object-cover"
-                />{" "}
-              </span>
+              {/* FIX 2: Removed <span> wrapper and added object-cover/rounded-full to image */}
+              <img
+                src="./raghuSir.jpg"
+                alt="Raghavendra Sir"
+                className="w-full h-full object-cover rounded-full"
+              />
             </div>
             <h4 className="text-lg font-semibold mt-1">Raghavendra</h4>
             <p className={`text-sm font-bold ${PRIMARY_COLOR_TEXT}`}>

@@ -143,8 +143,9 @@ const Main = () => {
           ))}
         </div>
       </section>
-      {/* --- The CatchUp Corner Section --- */}
-      // --- The CatchUp Corner Section (FIXED WIDTH) ---
+      {/* ---------------------------------------------------- */}
+      {/* --- The CatchUp Corner Section (MAXIMUM WIDER) --- */}
+      {/* ---------------------------------------------------- */}
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
       >
@@ -154,8 +155,12 @@ const Main = () => {
           {" "}
           The CatchUp Corner 📰{" "}
         </h2>
-        {/* FIX: Changed max-w-7xl to max-w-4xl for better centering and grouping. */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left **max-w-4xl** mx-auto">
+        {/*
+          FIX:
+          Increased container width to **max-w-7xl** (the widest standard Tailwind class)
+          and kept the gap-12 to maximize the width of the individual 3-column cards.
+        */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left **max-w-7xl** mx-auto">
           {/* Main News Bulletin Card */}
           <div
             className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00]`}
@@ -194,7 +199,7 @@ const Main = () => {
 
           {/* HonestByts Card */}
           <div
-            className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00] h-full`}
+            className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00]`}
           >
             <h3 className={`text-xl font-bold mb-3 ${PRIMARY_COLOR_TEXT}`}>
               {" "}
@@ -231,7 +236,7 @@ const Main = () => {
 
           {/* TechByts Card */}
           <div
-            className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00] h-full`}
+            className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00]`}
           >
             <h3 className={`text-xl font-bold mb-3 ${PRIMARY_COLOR_TEXT}`}>
               {" "}
@@ -267,6 +272,9 @@ const Main = () => {
           </div>
         </div>
       </section>
+      {/* ---------------------------------------------------- */}
+      {/* --- End of The CatchUp Corner Section --- */}
+      {/* ---------------------------------------------------- */}
       <section id="team" className="py-16 md:py-20 px-4 md:px-12 text-center">
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}

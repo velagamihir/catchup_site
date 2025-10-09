@@ -335,7 +335,7 @@ const Main = () => {
           {" "}
           What Our Students Say{" "}
         </h2>
-        <div className="py-16 md:py-20 px-4 md:px-12 text-center">
+        <div className="flex justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {/* Testimonial 1 */}
             <div

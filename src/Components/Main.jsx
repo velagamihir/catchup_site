@@ -143,9 +143,6 @@ const Main = () => {
           ))}
         </div>
       </section>
-      {/* ---------------------------------------------------- */}
-      {/* --- The CatchUp Corner Section (MAXIMUM WIDER) --- */}
-      {/* ---------------------------------------------------- */}
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
       >

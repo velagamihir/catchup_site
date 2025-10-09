@@ -335,48 +335,51 @@ const Main = () => {
           {" "}
           What Our Students Say{" "}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-          {/* Testimonial 1 */}
-          <div
-            className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
-          >
-            <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
-              {" "}
-              "My university has been a great place for both learning and
-              personal growth. I'm through my specialization in AI and Data
-              Science."{" "}
+        <div className="py-16 md:py-20 px-4 md:px-12 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+            {/* Testimonial 1 */}
+            <div
+              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
+            >
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
+                {" "}
+                "My university has been a great place for both learning and
+                personal growth. I'm through my specialization in AI and Data
+                Science."{" "}
+              </div>
+              <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
+                {" "}
+                - P. Salkeerthana{" "}
+              </div>
             </div>
-            <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
-              {" "}
-              - P. Salkeerthana{" "}
+            {/* Testimonial 2 */}
+            <div
+              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
+            >
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
+                {" "}
+                "I am proud today that the university gave me a platform for my
+                glorious success. I recommend CatchUp2.0 to everyone."{" "}
+              </div>
+              <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
+                {" "}
+                - Pettapagu Venkateswaramma{" "}
+              </div>
             </div>
-          </div>
-          {/* Testimonial 2 */}
-          <div
-            className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
-          >
-            <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
-              {" "}
-              "I am proud today that the university gave me a platform for my
-              glorious success. I recommend CatchUp2.0 to everyone."{" "}
-            </div>
-            <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
-              {" "}
-              - Pettapagu Venkateswaramma{" "}
-            </div>
-          </div>
-          {/* Testimonial 3 */}
-          <div
-            className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
-          >
-            <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
-              {" "}
-              "I know much about my college. The orientation program, as
-              mentioned, informed me greatly and gave me the clarity I needed."{" "}
-            </div>
-            <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
-              {" "}
-              - Student Name (Omitted){" "}
+            {/* Testimonial 3 */}
+            <div
+              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
+            >
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
+                {" "}
+                "I know much about my college. The orientation program, as
+                mentioned, informed me greatly and gave me the clarity I
+                needed."{" "}
+              </div>
+              <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
+                {" "}
+                - Student Name (Omitted){" "}
+              </div>
             </div>
           </div>
         </div>

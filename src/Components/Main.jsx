@@ -265,7 +265,6 @@ const Main = () => {
           </div>
         </div>
       </section>
-      // --- Meet the CatchUp Team Section (FINAL FIX) ---
       <section id="team" className="py-16 md:py-20 px-4 md:px-12 text-center">
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
@@ -273,11 +272,15 @@ const Main = () => {
           {" "}
           Meet the CatchUp Team{" "}
         </h2>
-        {/* The Grid Container is now wider (max-w-2xl) and has a larger gap (gap-20). */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 **gap-20 max-w-2xl** mx-auto mt-10">
+
+        {/* FIX: Use grid-cols-2, center the container with mx-auto, and use a gap for spacing. */}
+        {/* I've adjusted the max-w back to 'max-w-xl' and increased the gap for better spacing. */}
+        <div className="grid grid-cols-2 gap-20 max-w-xl mx-auto mt-10">
+          {/* Profile 1 */}
           <div className="text-center">
+            {/* The circle itself is centered in its grid column using mx-auto */}
             <div
-              className={`w-32 h-32 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
+              className={`w-36 h-36 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
               <img
                 src="./princi.jpg"
@@ -295,9 +298,11 @@ const Main = () => {
             </p>
           </div>
 
+          {/* Profile 2 */}
           <div className="text-center">
+            {/* The circle itself is centered in its grid column using mx-auto */}
             <div
-              className={`w-32 h-32 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
+              className={`w-36 h-36 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
               <img
                 src="./raghuSir.jpg"

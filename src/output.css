@@ -272,6 +272,9 @@
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
+  .h-32 {
+    height: calc(var(--spacing) * 32);
+  }
   .h-44 {
     height: calc(var(--spacing) * 44);
   }
@@ -298,6 +301,9 @@
   }
   .w-30 {
     width: calc(var(--spacing) * 30);
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
   }
   .w-50 {
     width: calc(var(--spacing) * 50);
@@ -430,6 +436,9 @@
   }
   .bg-white {
     background-color: var(--color-white);
+  }
+  .object-cover {
+    object-fit: cover;
   }
   .p-0 {
     padding: calc(var(--spacing) * 0);

@@ -11,10 +11,9 @@ const LIGHT_TINT = "bg-[#FFF3E6]";
 // --- Main.jsx React Component with Tailwind CSS Classes ---
 const Main = () => {
   return (
-    // CORRECTION: Template literal was not wrapped in curly braces {}
+    // Corrected JSX String Interpolation
     <div className={`min-h-screen ${LIGHT_BG} font-sans ${DARK_TEXT}`}>
       {/* Sticky CTA Sidebar */}
-      {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
       <div
         className={`fixed right-0 top-1/2 transform -translate-y-1/2 w-12 ${PRIMARY_COLOR_BG} p-2 rounded-l-lg font-bold z-[1000] text-white`}
         style={{
@@ -24,40 +23,35 @@ const Main = () => {
         }}
       >
         <a href="#contact" className="hover:underline">
-          CONTACT US / LEARN MORE
+          {" "}
+          CONTACT US / LEARN MORE{" "}
         </a>
       </div>
 
       {/* Header / Sticky Navigation Bar */}
-      {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
       <header
         className={`sticky top-0 z-50 flex justify-between items-center ${CARD_BG} p-4 md:px-12 shadow-md border-b-2 border-[#FF7F00]`}
       >
         <div className="text-2xl font-bold">
           {" "}
           CatchUp
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <span className={`text-4xl ${PRIMARY_COLOR_TEXT}`}>2.0</span>
         </div>
         <nav className="hidden sm:flex space-x-6 font-medium">
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <a href="#" className={`hover:${PRIMARY_COLOR_TEXT}`}>
             {" "}
             About Us{" "}
           </a>
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <a href="#team" className={`hover:${PRIMARY_COLOR_TEXT}`}>
             {" "}
             Team{" "}
           </a>
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <a href="#contact" className={`hover:${PRIMARY_COLOR_TEXT}`}>
             {" "}
             Contact Us{" "}
           </a>
         </nav>
         <div className="text-sm">
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <a
             href="/login"
             className={`ml-4 font-semibold ${PRIMARY_COLOR_TEXT} hover:opacity-80`}
@@ -78,7 +72,6 @@ const Main = () => {
       </div>
 
       {/* Notifications Bar (Marquee) */}
-      {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
       <div
         className={`py-2 px-4 md:px-12 ${PRIMARY_COLOR_BG} text-white text-sm overflow-hidden`}
       >
@@ -91,11 +84,9 @@ const Main = () => {
         </div>
       </div>
 
-      {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
       <div
         className={`h-[500px] ${CARD_BG} border-b border-gray-200 flex justify-center items-center`}
       >
-        {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
         <h1
           className={`text-5xl md:text-6xl font-extrabold ${PRIMARY_COLOR_TEXT} text-center px-4`}
         >
@@ -105,7 +96,6 @@ const Main = () => {
       </div>
 
       <section className="py-16 md:py-20 px-4 md:px-12 text-center">
-        {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
         >
@@ -135,12 +125,10 @@ const Main = () => {
               desc: "See what happens when the logistics team and scriptwriters clash during a shoot...",
             },
           ].map((card, idx) => (
-            // CORRECTION: Template literal was not wrapped in curly braces {}
             <div
               key={idx}
               className={`rounded-lg overflow-hidden shadow-lg ${CARD_BG} transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
             >
-              {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
               <div
                 className={`h-44 bg-gray-200 flex items-center justify-center text-xl font-bold ${PRIMARY_COLOR_TEXT}`}
               >
@@ -159,12 +147,10 @@ const Main = () => {
         </div>
       </section>
 
-      {/* --- The CatchUp Corner Section (FIXED) --- */}
-      {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
+      {/* --- The CatchUp Corner Section --- */}
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
       >
-        {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
         >
@@ -173,11 +159,9 @@ const Main = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-7xl mx-auto">
           {/* Main News Bulletin Card */}
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <div
             className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00]`}
           >
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
             <h3 className={`text-xl font-bold mb-3 ${PRIMARY_COLOR_TEXT}`}>
               {" "}
               Main News Bulletin 📣{" "}
@@ -211,11 +195,9 @@ const Main = () => {
           </div>
 
           {/* HonestByts Card */}
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <div
             className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00] h-full`}
           >
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
             <h3 className={`text-xl font-bold mb-3 ${PRIMARY_COLOR_TEXT}`}>
               {" "}
               HonestByts (Student Voice) 🗣{" "}
@@ -250,11 +232,9 @@ const Main = () => {
           </div>
 
           {/* TechByts Card */}
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <div
             className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00] h-full`}
           >
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
             <h3 className={`text-xl font-bold mb-3 ${PRIMARY_COLOR_TEXT}`}>
               {" "}
               TechByts (Innovation Snippets) 💡{" "}
@@ -292,7 +272,6 @@ const Main = () => {
 
       {/* --- Meet the CatchUp Team Section --- */}
       <section id="team" className="py-16 md:py-20 px-4 md:px-12 text-center">
-        {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
         >
@@ -301,16 +280,17 @@ const Main = () => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-xl mx-auto mt-10">
           <div className="text-center">
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
+            {/* CORRECTION: Changed w-50 h-50 to standard w-32 h-32 */}
             <div
-              className={`w-50 h-50 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
+              className={`w-32 h-32 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
+              {/* Added w-full h-full object-cover to ensure image fills circle */}
               <span>
                 {" "}
                 <img
                   src="./princi.jpg"
                   alt="Principal Sir"
-                  className="h-50 w-50"
+                  className="w-full h-full object-cover"
                 />{" "}
               </span>
             </div>
@@ -318,24 +298,27 @@ const Main = () => {
               {" "}
               Dr. Mallikarjun Reddy{" "}
             </h4>
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
             <p className={`text-sm font-bold ${PRIMARY_COLOR_TEXT}`}>
               {" "}
               CatchUp Chief Editor{" "}
             </p>
           </div>
           <div className="text-center">
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
+            {/* CORRECTION: Changed w-50 h-50 to standard w-32 h-32 */}
             <div
-              className={`w-50 h-50 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
+              className={`w-32 h-32 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
+              {/* Added w-full h-full object-cover to ensure image fills circle */}
               <span>
                 {" "}
-                <img src="./raghuSir.jpg" alt="Raghavendra Sir" />{" "}
+                <img
+                  src="./raghuSir.jpg"
+                  alt="Raghavendra Sir"
+                  className="w-full h-full object-cover"
+                />{" "}
               </span>
             </div>
             <h4 className="text-lg font-semibold mt-1">Raghavendra</h4>
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
             <p className={`text-sm font-bold ${PRIMARY_COLOR_TEXT}`}>
               {" "}
               Faculty Coordinator{" "}
@@ -345,11 +328,9 @@ const Main = () => {
       </section>
 
       {/* --- Testimonials Section --- */}
-      {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
       >
-        {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
         >
@@ -358,7 +339,6 @@ const Main = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
           {/* Testimonial 1 */}
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <div
             className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
           >
@@ -368,14 +348,12 @@ const Main = () => {
               personal growth. I'm through my specialization in AI and Data
               Science."{" "}
             </div>
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
             <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
               {" "}
               - P. Salkeerthana{" "}
             </div>
           </div>
           {/* Testimonial 2 */}
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <div
             className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
           >
@@ -384,14 +362,12 @@ const Main = () => {
               "I am proud today that the university gave me a platform for my
               glorious success. I recommend CatchUp2.0 to everyone."{" "}
             </div>
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
             <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
               {" "}
               - Pettapagu Venkateswaramma{" "}
             </div>
           </div>
           {/* Testimonial 3 */}
-          {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
           <div
             className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
           >
@@ -400,7 +376,6 @@ const Main = () => {
               "I know much about my college. The orientation program, as
               mentioned, informed me greatly and gave me the clarity I needed."{" "}
             </div>
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
             <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
               {" "}
               - Student Name (Omitted){" "}
@@ -410,7 +385,6 @@ const Main = () => {
       </section>
 
       {/* --- Footer --- */}
-      {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
       <footer
         id="contact"
         className={`mt-12 ${CARD_BG} p-10 md:p-12 border-t-2 border-[#FF7F00] flex flex-wrap justify-between`}
@@ -419,7 +393,6 @@ const Main = () => {
           <div className="text-2xl font-bold">
             {" "}
             CatchUp
-            {/* CORRECTION: Template literal was not wrapped in curly braces {} */}
             <span className={`text-4xl ${PRIMARY_COLOR_TEXT}`}>2.0</span>
           </div>
           <p className="mt-3 text-sm text-gray-500">
@@ -449,7 +422,6 @@ const Main = () => {
             "Public Notice",
             "Support",
           ].map((link, idx) => (
-            // CORRECTION: Template literal was not wrapped in curly braces {}
             <a
               key={idx}
               href="#"

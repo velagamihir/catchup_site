@@ -144,6 +144,7 @@ const Main = () => {
         </div>
       </section>
       {/* --- The CatchUp Corner Section --- */}
+      // --- The CatchUp Corner Section (FIXED WIDTH) ---
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
       >
@@ -153,7 +154,8 @@ const Main = () => {
           {" "}
           The CatchUp Corner 📰{" "}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-7xl mx-auto">
+        {/* FIX: Changed max-w-7xl to max-w-4xl for better centering and grouping. */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left **max-w-4xl** mx-auto">
           {/* Main News Bulletin Card */}
           <div
             className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00]`}

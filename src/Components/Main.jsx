@@ -29,7 +29,6 @@ const Main = () => {
           CONTACT US / LEARN MORE{" "}
         </a>
       </div>
-
       {/* Header / Sticky Navigation Bar */}
       <header
         className={`sticky top-0 z-50 flex justify-between items-center ${CARD_BG} p-4 md:px-12 shadow-md border-b-2 border-[#FF7F00]`}
@@ -63,7 +62,6 @@ const Main = () => {
           </a>
         </div>
       </header>
-
       {/* Promotional Logos/Sponsors Section */}
       <div
         className={`flex justify-center flex-wrap gap-8 py-5 md:py-8 ${CARD_BG} border-b border-gray-200`}
@@ -72,7 +70,6 @@ const Main = () => {
           <img src="./vvituLogo.png" className="h-20 w-30" alt="VVIT Logo" />
         </div>
       </div>
-
       {/* Notifications Bar (Marquee) */}
       <div
         className={`py-2 px-4 md:px-12 ${PRIMARY_COLOR_BG} text-white text-sm overflow-hidden`}
@@ -85,7 +82,6 @@ const Main = () => {
           </span>
         </div>
       </div>
-
       <div
         className={`h-[500px] ${CARD_BG} border-b border-gray-200 flex justify-center items-center`}
       >
@@ -96,7 +92,6 @@ const Main = () => {
           CatchUp to the Future. Stay Ahead.{" "}
         </h1>
       </div>
-
       <section className="py-16 md:py-20 px-4 md:px-12 text-center">
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
@@ -148,7 +143,6 @@ const Main = () => {
           ))}
         </div>
       </section>
-
       {/* --- The CatchUp Corner Section --- */}
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
@@ -271,8 +265,7 @@ const Main = () => {
           </div>
         </div>
       </section>
-
-      {/* --- Meet the CatchUp Team Section (FIXED) --- */}
+      // --- Meet the CatchUp Team Section (FINAL FIX) ---
       <section id="team" className="py-16 md:py-20 px-4 md:px-12 text-center">
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
@@ -280,13 +273,12 @@ const Main = () => {
           {" "}
           Meet the CatchUp Team{" "}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-xl mx-auto mt-10">
+        {/* The Grid Container is now wider (max-w-2xl) and has a larger gap (gap-20). */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 **gap-20 max-w-2xl** mx-auto mt-10">
           <div className="text-center">
-            {/* FIX 1: ADDED mx-auto to center the circular div within its grid column */}
             <div
               className={`w-32 h-32 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
-              {/* FIX 2: Removed <span> wrapper and added object-cover/rounded-full to image */}
               <img
                 src="./princi.jpg"
                 alt="Principal Sir"
@@ -302,12 +294,11 @@ const Main = () => {
               CatchUp Chief Editor{" "}
             </p>
           </div>
+
           <div className="text-center">
-            {/* FIX 1: ADDED mx-auto to center the circular div within its grid column */}
             <div
               className={`w-32 h-32 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
-              {/* FIX 2: Removed <span> wrapper and added object-cover/rounded-full to image */}
               <img
                 src="./raghuSir.jpg"
                 alt="Raghavendra Sir"
@@ -322,7 +313,6 @@ const Main = () => {
           </div>
         </div>
       </section>
-
       {/* --- Testimonials Section --- */}
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
@@ -379,7 +369,6 @@ const Main = () => {
           </div>
         </div>
       </section>
-
       {/* --- Footer --- */}
       <footer
         id="contact"
@@ -435,7 +424,6 @@ const Main = () => {
           </p>
         </div>
       </footer>
-
       <style>
         {`
           @keyframes marquee {

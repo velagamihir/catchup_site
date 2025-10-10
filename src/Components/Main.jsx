@@ -67,7 +67,7 @@ const Main = () => {
         className={`flex justify-center flex-wrap gap-8 py-5 md:py-8 ${CARD_BG} border-b border-gray-200`}
       >
         <div>
-          <img src="./vvituLogo.jpg" className="h-20 w-30" alt="VVIT Logo" />
+          <img src="./vvituLogo.png" className="h-20 w-30" alt="VVIT Logo" />
         </div>
       </div>
       {/* Notifications Bar (Marquee) */}
@@ -285,7 +285,7 @@ const Main = () => {
 
         {/* FIX: Use grid-cols-2, center the container with mx-auto, and use a gap for spacing. */}
         {/* I've adjusted the max-w back to 'max-w-xl' and increased the gap for better spacing. */}
-        <div className="grid grid-cols-2 gap-20 max-w-xl mx-auto mt-10 ms-auto">
+        <div className="grid grid-cols-2 gap-20 max-w-xl mx-auto mt-10">
           {/* Profile 1 */}
           <div className="text-center">
             {/* The circle itself is centered in its grid column using mx-auto */}
@@ -349,7 +349,7 @@ const Main = () => {
             <div
               className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
             >
-              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
                 {" "}
                 "My university has been a great place for both learning and
                 personal growth. I'm through my specialization in AI and Data
@@ -364,7 +364,7 @@ const Main = () => {
             <div
               className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
             >
-              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
                 {" "}
                 "I am proud today that the university gave me a platform for my
                 glorious success. I recommend CatchUp2.0 to everyone."{" "}
@@ -378,7 +378,7 @@ const Main = () => {
             <div
               className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
             >
-              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
                 {" "}
                 "I know much about my college. The orientation program, as
                 mentioned, informed me greatly and gave me the clarity I

@@ -143,6 +143,7 @@ const Main = () => {
           ))}
         </div>
       </section>
+      // ... other code ...
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
       >
@@ -152,12 +153,8 @@ const Main = () => {
           {" "}
           The CatchUp Corner 📰{" "}
         </h2>
-        {/*
-          FIX:
-          Increased container width to **max-w-7xl** (the widest standard Tailwind class)
-          and kept the gap-12 to maximize the width of the individual 3-column cards.
-        */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left **max-w-7xl** mx-auto">
+        {/* The content container below is centered using 'mx-auto' and has a maximum width of 'max-w-7xl'. */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left max-w-7xl mx-auto">
           {/* Main News Bulletin Card */}
           <div
             className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00]`}

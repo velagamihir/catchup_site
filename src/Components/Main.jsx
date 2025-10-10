@@ -143,7 +143,7 @@ const Main = () => {
           ))}
         </div>
       </section>
-      // ... other code ...
+      // ... other code ... // ... other code ...
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
       >
@@ -153,8 +153,10 @@ const Main = () => {
           {" "}
           The CatchUp Corner 📰{" "}
         </h2>
-        {/* The content container below is centered using 'mx-auto' and has a maximum width of 'max-w-7xl'. */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left max-w-7xl mx-auto">
+        {/* FIX: Changed 'gap-12' to 'gap-8' to allow the three cards 
+    to take up more horizontal space within the max-w-7xl container.
+  */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-7xl mx-auto">
           {/* Main News Bulletin Card */}
           <div
             className={`p-6 rounded-lg ${LIGHT_TINT} border-l-4 border-[#FF7F00]`}

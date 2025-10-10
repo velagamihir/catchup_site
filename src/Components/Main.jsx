@@ -94,7 +94,7 @@ const Main = () => {
       </div>
       <section>
         <div>
-          <img src="./thumbnail.jpg" alt="Thumbnail" />
+          <img src="/thumbnail.jpg" alt="Thumbnail" />
         </div>
       </section>
       <section className="py-16 md:py-20 px-4 md:px-12 text-center">
@@ -134,7 +134,7 @@ const Main = () => {
               <div
                 className={`h-44 bg-gray-200 flex items-center justify-center text-xl font-bold ${PRIMARY_COLOR_TEXT}`}
               >
-                <img src="./thumbnail.jpg" alt="Thumbnail" className="h-45" />
+                <img src="/thumbnail.jpg" alt="Thumbnail" className="h-45" />
               </div>
               <div className="p-4">
                 <span className="text-xs text-gray-500 block mb-2">

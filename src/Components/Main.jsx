@@ -93,7 +93,7 @@ const Main = () => {
         </h1>
       </div>
       <section>
-        <div>
+        <div className="flex justify-center items-center">
           <img src="/thumbnail.jpg" alt="Thumbnail" />
         </div>
       </section>

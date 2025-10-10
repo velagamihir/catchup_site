@@ -324,6 +324,8 @@ const Main = () => {
         </div>
       </section>
       {/* --- Testimonials Section --- */}
+      // ... (code before Testimonials Section) ...
+      {/* --- Testimonials Section --- */}
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
       >
@@ -333,8 +335,14 @@ const Main = () => {
           {" "}
           What Our Students Say{" "}
         </h2>
+        {/*
+          FIX:
+          1. The 'flex justify-center items-center' div is no longer needed 
+             since we're using 'mx-auto' on the inner container.
+          2. The inner grid container needs a 'max-w-6xl' and 'mx-auto' to center it.
+        */}
         <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Testimonial 1 */}
             <div
               className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}

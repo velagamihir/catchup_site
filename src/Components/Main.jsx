@@ -17,7 +17,7 @@ const Main = () => {
     <div className={`min-h-screen ${LIGHT_BG} font-sans ${DARK_TEXT}`}>
       {/* Sticky CTA Sidebar */}
       <div
-        className={`fixed right-0 top-1/2 transform -translate-y-1/2 w-12 ${PRIMARY_COLOR_BG} p-2 rounded-l-lg font-bold z-[1000] text-white`}
+        className={`fixed right-0 top-1/2 transform -translate-y-1/2 w-12 ${PRIMARY_COLOR_BG} p-2 rounded-r-lg font-bold z-[1000] text-white`}
         style={{
           writingMode: "vertical-rl",
           textOrientation: "mixed",
@@ -92,6 +92,11 @@ const Main = () => {
           CatchUp to the Future. Stay Ahead.{" "}
         </h1>
       </div>
+      <section>
+        <div>
+          <img src="./thumbnail.jpg" alt="Thumbnail" />
+        </div>
+      </section>
       <section className="py-16 md:py-20 px-4 md:px-12 text-center">
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
@@ -285,7 +290,7 @@ const Main = () => {
           <div className="text-center">
             {/* The circle itself is centered in its grid column using mx-auto */}
             <div
-              className={`w-36 h-36 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
+              className={`w-50 h-50 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
               <img
                 src="./princi.jpg"
@@ -295,7 +300,7 @@ const Main = () => {
             </div>
             <h4 className="text-lg font-semibold mt-1">
               {" "}
-              Dr. Mallikarjun Reddy{" "}
+              Dr. Mallikarjuna Reddy{" "}
             </h4>
             <p className={`text-sm font-bold ${PRIMARY_COLOR_TEXT}`}>
               {" "}
@@ -307,7 +312,7 @@ const Main = () => {
           <div className="text-center">
             {/* The circle itself is centered in its grid column using mx-auto */}
             <div
-              className={`w-36 h-36 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
+              className={`w-50 h-50 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
               <img
                 src="./raghuSir.jpg"
@@ -315,7 +320,7 @@ const Main = () => {
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
-            <h4 className="text-lg font-semibold mt-1">Raghavendra</h4>
+            <h4 className="text-lg font-semibold mt-1">Mr. Ch. Raghavendra</h4>
             <p className={`text-sm font-bold ${PRIMARY_COLOR_TEXT}`}>
               {" "}
               Faculty Coordinator{" "}
@@ -323,9 +328,6 @@ const Main = () => {
           </div>
         </div>
       </section>
-      {/* --- Testimonials Section --- */}
-      // ... (code before Testimonials Section) ...
-      {/* --- Testimonials Section --- */}
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
       >

@@ -143,9 +143,8 @@ const Main = () => {
           ))}
         </div>
       </section>
-      // ... other code ... // ... other code ...
       <section
-        className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
+        className={`py-16 md:py-20 px-4 md:px-4 text-center ${LIGHT_BG}`}
       >
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}

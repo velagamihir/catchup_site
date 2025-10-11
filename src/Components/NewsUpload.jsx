@@ -97,7 +97,7 @@ export default function ContentSubmission() {
           <p>Welcome! {window.sessionStorage.getItem("username")}</p>
         </div>
         <button
-          className="hover:text-[#FF7F00] hover:bg-gray-100 px-4 py-2 rounded-md"
+          className="hover:text-[#FF7F00]  px-4 py-2 rounded-md duration-300"
           onClick={logout}
         >
           Logout

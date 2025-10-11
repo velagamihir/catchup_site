@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // Assuming ../output.css is your compiled Tailwind CSS
 import "../output.css";
-
+import { supabase } from "../SupabaseClient";
 // --- Utility Constants (Mimicking Tailwind Theme) ---
 const PRIMARY_COLOR_TEXT = "text-[#FF7F00]";
 const PRIMARY_COLOR_BG = "bg-[#FF7F00]";
@@ -9,9 +9,50 @@ const LIGHT_BG = "bg-gray-50";
 const DARK_TEXT = "text-gray-800";
 const CARD_BG = "bg-white";
 const LIGHT_TINT = "bg-[#FFF3E6]";
-
 // --- Main.jsx React Component with Tailwind CSS Classes ---
 const Main = () => {
+  const [testimonials, setTestimonials] = useState([]);
+  const [latestMedia, setLatestMedia] = useState([]);
+
+  useEffect(() => {
+    async function fetchLatestMedia() {
+      const { data, error } = await supabase
+        .from("catchup_media")
+        .select("*")
+        .order("created_at", { ascending: false })
+        .limit(4);
+      console.log(data);
+      if (error) {
+        console.error("Error fetching media:", error);
+      } else {
+        // Construct thumbnail URLs from Supabase storage bucket
+        const mediaWithUrls = data.map((item) => ({
+          ...item,
+          thumbnail_url: item.thumbnail_url,
+        }));
+        setLatestMedia(mediaWithUrls);
+      }
+    }
+
+    fetchLatestMedia();
+  }, []);
+
+  useEffect(() => {
+    async function fetchTestimonials() {
+      const { data, error } = await supabase
+        .from("testimonials")
+        .select("*")
+        .limit(3); // last 3 testimonials
+
+      if (error) {
+        console.error("Error fetching testimonials:", error);
+      } else {
+        setTestimonials(data);
+      }
+    }
+
+    fetchTestimonials();
+  }, []);
   return (
     // Corrected JSX String Interpolation
     <div className={`min-h-screen ${LIGHT_BG} font-sans ${DARK_TEXT}`}>
@@ -43,7 +84,7 @@ const Main = () => {
             {" "}
             About Us{" "}
           </a>
-          <a href="#team" className={`hover:${PRIMARY_COLOR_TEXT}`}>
+          <a href="/team" className={`hover:${PRIMARY_COLOR_TEXT}`}>
             {" "}
             Team{" "}
           </a>
@@ -101,50 +142,35 @@ const Main = () => {
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
         >
-          {" "}
-          Latest from CatchUp Media 🎥{" "}
+          Latest from CatchUp Media 🎥
         </h2>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-          {[
-            {
-              date: "24th Sep 2025 | New Release",
-              title: "LATEST EPISODE: The AI Revolution on Campus",
-              desc: "Our anchors dive deep into the new AI labs and interview the research faculty...",
-            },
-            {
-              date: "20th Sep 2025 | Trending Now",
-              title: "LATEST EPISODE: Student Life - The Late Night Coders",
-              desc: "A look at the dedicated students preparing for the upcoming national hackathon...",
-            },
-            {
-              date: "20th Sep 2025 | Entertainment",
-              title: "BLOOPERS: Mic Drops and Script Flips - Vol 1",
-              desc: "The funniest outtakes from our last two shoots, featuring anchor mishaps...",
-            },
-            {
-              date: "19th Sep 2025 | Behind the Scenes",
-              title: "BLOOPERS: Lights, Camera, Chaos - Crew Edition",
-              desc: "See what happens when the logistics team and scriptwriters clash during a shoot...",
-            },
-          ].map((card, idx) => (
-            <div
+          {latestMedia.map((item, idx) => (
+            <a
               key={idx}
+              href={item.video_link}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`rounded-lg overflow-hidden shadow-lg ${CARD_BG} transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
             >
               <div
                 className={`h-44 bg-gray-200 flex items-center justify-center text-xl font-bold ${PRIMARY_COLOR_TEXT}`}
               >
-                <img src="./thumbnail.jpg" alt="Thumbnail" className="h-45" />
+                <img
+                  src={item.thumbnail_url}
+                  alt={item.title}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="p-4">
                 <span className="text-xs text-gray-500 block mb-2">
-                  {" "}
-                  {card.date}{" "}
+                  {item.date || "Recent"}
                 </span>
-                <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-                <p className="text-sm text-gray-600">{card.desc}</p>
+                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.description}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
@@ -330,61 +356,28 @@ const Main = () => {
       </section>
       {/* ---------------------------------------------------- */}
       <section
-        className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
+        className={`py-16 md:py-20 px-4 md:px-12 text-center bg-gray-50`}
       >
         <h2
-          className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
+          className={`text-4xl font-bold inline-block pb-1 mb-10 text-orange-500 border-b-4 border-[#FF7F00]`}
         >
-          {" "}
-          What Our Students Say{" "}
+          What Our Students Say
         </h2>
-        {/*
-          FIX: Removed unnecessary parent flex container and added max-w/mx-auto to the grid container
-        */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Testimonial 1 */}
-          <div
-            className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
-          >
-            <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-              {" "}
-              "My university has been a great place for both learning and
-              personal growth. I'm through my specialization in AI and Data
-              Science."{" "}
+          {testimonials.map((t) => (
+            <div
+              key={t.id}
+              className={`p-6 rounded-lg bg-white shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-1`}
+            >
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 hover:shadow-xl hover:-translate-y-1">
+                "{t.message}"
+              </div>
+              <div className="text-right font-bold text-orange-500">
+                - {t.name} ({t.role})
+              </div>
             </div>
-            <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
-              {" "}
-              - P. Salkeerthana{" "}
-            </div>
-          </div>
-          {/* Testimonial 2 */}
-          <div
-            className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
-          >
-            <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-              {" "}
-              "I am proud today that the university gave me a platform for my
-              glorious success. I recommend CatchUp2.0 to everyone."{" "}
-            </div>
-            <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
-              {" "}
-              - Pettapagu Venkateswaramma{" "}
-            </div>
-          </div>
-          {/* Testimonial 3 */}
-          <div
-            className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
-          >
-            <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-              {" "}
-              "I know much about my college. The orientation program, as
-              mentioned, informed me greatly and gave me the clarity I needed."{" "}
-            </div>
-            <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
-              {" "}
-              - Student Name (Omitted){" "}
-            </div>
-          </div>
+          ))}
         </div>
       </section>
       {/* --- Footer --- */}

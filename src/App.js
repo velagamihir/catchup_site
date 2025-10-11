@@ -5,6 +5,7 @@ import "./App.css";
 import Login from "./Components/Login";
 import NewsUpload from "./Components/NewsUpload";
 import Team from "./Components/Team";
+import RecentUploads from "./Components/RecentUploads";
 const App = () => {
   return (
     <div>
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/newsUpload" element={<NewsUpload />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/recentUploads" element={<RecentUploads />} />
       </Routes>
     </div>
   );

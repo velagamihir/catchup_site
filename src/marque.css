@@ -1,0 +1,27 @@
+/* marque.css */
+
+/* 1. Define the Keyframe Animation for Marquee 
+  Moves the content from 0% (full width of content) to -100% (past the start point).
+*/
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* 2. Apply the Animation using the Tailwind class name
+  The Marquee element uses 'animate-marquee'.
+*/
+.animate-marquee {
+  /* Ensure the content takes up enough space to scroll */
+  display: flex;
+
+  /* Apply the animation: marquee name, duration (e.g., 15s), linear speed, infinite loop */
+  animation: marquee 15s linear infinite;
+
+  /* This prevents the text from wrapping, ensuring a horizontal scroll */
+  white-space: nowrap;
+}

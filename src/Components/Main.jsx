@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-// Assuming ../output.css is your compiled Tailwind CSS
+import "../marque.css";
 import "../output.css";
 import { supabase } from "../SupabaseClient";
+import { useNavigate } from "react-router-dom";
 // --- Utility Constants (Mimicking Tailwind Theme) ---
 const PRIMARY_COLOR_TEXT = "text-[#FF7F00]";
 const PRIMARY_COLOR_BG = "bg-[#FF7F00]";
@@ -9,8 +10,11 @@ const LIGHT_BG = "bg-gray-50";
 const DARK_TEXT = "text-gray-800";
 const CARD_BG = "bg-white";
 const LIGHT_TINT = "bg-[#FFF3E6]";
+const PRIMARY_COLOR_BORDER = "border-2 border-";
+
 // --- Main.jsx React Component with Tailwind CSS Classes ---
 const Main = () => {
+  const navigate = useNavigate();
   const [testimonials, setTestimonials] = useState([]);
   const [latestMedia, setLatestMedia] = useState([]);
 
@@ -20,7 +24,7 @@ const Main = () => {
         .from("catchup_media")
         .select("*")
         .order("created_at", { ascending: false })
-        .limit(4);
+        .limit(3);
       console.log(data);
       if (error) {
         console.error("Error fetching media:", error);
@@ -111,19 +115,36 @@ const Main = () => {
           <img src="/vvituLogo.jpg" className="h-20 w-30" alt="VVIT Logo" />
         </div>
       </div>
-      {/* Notifications Bar (Marquee) */}
+      {/* Notifications Bar (Marquee) - Improved */}
       <div
-        className={`py-2 px-4 md:px-12 ${PRIMARY_COLOR_BG} text-white text-sm overflow-hidden`}
+        className={`py-2 px-4 md:px-12 ${PRIMARY_COLOR_BG} text-white text-sm overflow-hidden relative`}
       >
-        <div className="animate-marquee whitespace-nowrap">
-          <span>
-            {" "}
-            CatchUp Recruitment Drive for *Editors, Script Writers, Logistics,
-            Anchors, and General Crew starts 01.11.2025! Register Now
-            &nbsp;&nbsp;&nbsp;&nbsp;|
-          </span>
-          &nbsp;&nbsp;&nbsp;
-          <span> The CatchUp website is finally live. </span>
+        <div className="flex">
+          <div className="animate-marquee whitespace-nowrap">
+            <span className="inline-block px-4">
+              CatchUp Recruitment Drive for *Editors, Script Writers, Logistics,
+              Anchors, and General Crew starts 01.11.2025! Register Now
+            </span>
+            <span className="inline-block px-4">
+              📢 Stay updated with the latest campus news and events
+            </span>
+            <span className="inline-block px-4">
+              🎥 New episode drops every week - Don't miss out!
+            </span>
+          </div>
+          {/* Duplicate content for seamless loop */}
+          <div className="animate-marquee whitespace-nowrap" aria-hidden="true">
+            <span className="inline-block px-4">
+              CatchUp Recruitment Drive for *Editors, Script Writers, Logistics,
+              Anchors, and General Crew starts 01.11.2025! Register Now
+            </span>
+            <span className="inline-block px-4">
+              📢 Stay updated with the latest campus news and events
+            </span>
+            <span className="inline-block px-4">
+              🎥 New episode drops every week - Don't miss out!
+            </span>
+          </div>
         </div>
       </div>
       <div
@@ -145,36 +166,44 @@ const Main = () => {
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}
         >
-          Latest from CatchUp Media 🎥
+          CatchUp Media 🎥
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-          {latestMedia.map((item, idx) => (
-            <a
-              key={idx}
-              href={item.video_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`rounded-lg overflow-hidden shadow-lg ${CARD_BG} transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
-            >
-              <div
-                className={`h-44 bg-gray-200 flex items-center justify-center text-xl font-bold ${PRIMARY_COLOR_TEXT}`}
+        <div className="flex items-center justify-around">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left w-250">
+            {latestMedia.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.video_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`rounded-lg overflow-hidden shadow-lg ${CARD_BG} transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
               >
-                <img
-                  src={item.thumbnail_url}
-                  alt={item.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <span className="text-xs text-gray-500 block mb-2">
-                  {item.date || "Recent"}
-                </span>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
-              </div>
-            </a>
-          ))}
+                <div
+                  className={`h-44 bg-gray-200 flex items-center justify-center text-xl font-bold ${PRIMARY_COLOR_TEXT}`}
+                >
+                  <img
+                    src={item.thumbnail_url}
+                    alt={item.title}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <span className="text-xs text-gray-500 block mb-2">
+                    {item.date || "Recent"}
+                  </span>
+                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+          <button
+            onClick={() => navigate("/recentUploads")}
+            className={`h-16 w-50 ${PRIMARY_COLOR_BG} text-white font-bold text-l rounded-4xl hover:${PRIMARY_COLOR_TEXT} hover:bg-white border -4 border transition-all duration-500 ease-in-out cursor-pointer hover:shadow-2xl`}
+          >
+            View More
+          </button>
         </div>
       </section>
       <section
@@ -187,8 +216,8 @@ const Main = () => {
           The CatchUp Corner 📰{" "}
         </h2>
         {/* FIX: Changed 'gap-12' to 'gap-8' to allow the three cards 
-          to take up more horizontal space within the max-w-7xl container.
-      */}
+        to take up more horizontal space within the max-w-7xl container.
+    */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-7xl mx-auto">
           {/* Main News Bulletin Card */}
           <div
@@ -373,7 +402,7 @@ const Main = () => {
               key={t.id}
               className={`p-6 rounded-lg bg-white shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-1`}
             >
-              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 hover:shadow-xl hover:-translate-y-1">
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-700">
                 "{t.message}"
               </div>
               <div className="text-right font-bold text-orange-500">
@@ -438,18 +467,6 @@ const Main = () => {
           </p>
         </div>
       </footer>
-      <style>
-        {`
-          @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-100%); }
-          }
-          .animate-marquee {
-            display: inline-block;
-            animation: marquee 20s linear infinite;
-          }
-        `}
-      </style>
     </div>
   );
 };

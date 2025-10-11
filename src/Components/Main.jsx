@@ -326,7 +326,7 @@ const Main = () => {
             </div>
             <h4 className="text-lg font-semibold mt-1">
               {" "}
-              Dr. Mallikarjuna Reddy{" "}
+              Dr. Y. Mallikarjuna Reddy{" "}
             </h4>
             <p className={`text-sm font-bold ${PRIMARY_COLOR_TEXT}`}>
               {" "}

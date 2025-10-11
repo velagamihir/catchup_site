@@ -17,7 +17,7 @@ const Main = () => {
     <div className={`min-h-screen ${LIGHT_BG} font-sans ${DARK_TEXT}`}>
       {/* Sticky CTA Sidebar */}
       <div
-        className={`fixed right-0 top-1/2 transform -translate-y-1/2 w-12 ${PRIMARY_COLOR_BG} p-2 rounded-r-lg font-bold z-[1000] text-white`}
+        className={`fixed right-0 top-1/2 transform -translate-y-1/2 w-12 ${PRIMARY_COLOR_BG} p-2 rounded-b-lg font-bold z-[1000] text-white`}
         style={{
           writingMode: "vertical-rl",
           textOrientation: "mixed",
@@ -158,8 +158,8 @@ const Main = () => {
           The CatchUp Corner 📰{" "}
         </h2>
         {/* FIX: Changed 'gap-12' to 'gap-8' to allow the three cards 
-    to take up more horizontal space within the max-w-7xl container.
-  */}
+          to take up more horizontal space within the max-w-7xl container.
+      */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-7xl mx-auto">
           {/* Main News Bulletin Card */}
           <div
@@ -283,14 +283,14 @@ const Main = () => {
           Meet the CatchUp Team{" "}
         </h2>
 
-        {/* FIX: Use grid-cols-2, center the container with mx-auto, and use a gap for spacing. */}
-        {/* I've adjusted the max-w back to 'max-w-xl' and increased the gap for better spacing. */}
-        <div className="grid grid-cols-2 gap-20 max-w-xl mx-auto mt-10">
+        {/* --- MODIFIED FOR MOBILE RESPONSIVENESS --- */}
+        {/* grid-cols-1 ensures stacking on mobile. sm:grid-cols-2 switches to side-by-side on small screens and up. */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-20 max-w-xs sm:max-w-xl mx-auto mt-10">
           {/* Profile 1 */}
           <div className="text-center">
-            {/* The circle itself is centered in its grid column using mx-auto */}
+            {/* Image size is adjusted for standard Tailwind sizing and responsiveness (w-32/h-32 for mobile) */}
             <div
-              className={`w-50 h-50 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
+              className={`w-32 h-32 md:w-40 md:h-40 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
               <img
                 src="./princi.jpg"
@@ -310,9 +310,9 @@ const Main = () => {
 
           {/* Profile 2 */}
           <div className="text-center">
-            {/* The circle itself is centered in its grid column using mx-auto */}
+            {/* Image size is adjusted for standard Tailwind sizing and responsiveness (w-32/h-32 for mobile) */}
             <div
-              className={`w-50 h-50 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
+              className={`w-32 h-32 md:w-40 md:h-40 rounded-full ${PRIMARY_COLOR_BG} border-8 border-white shadow-[0_0_0_5px_#FF7F00] mx-auto mb-4 flex items-center justify-center text-white text-sm font-semibold overflow-hidden`}
             >
               <img
                 src="./raghuSir.jpg"
@@ -328,6 +328,7 @@ const Main = () => {
           </div>
         </div>
       </section>
+      {/* ---------------------------------------------------- */}
       <section
         className={`py-16 md:py-20 px-4 md:px-12 text-center ${LIGHT_BG}`}
       >
@@ -338,56 +339,50 @@ const Main = () => {
           What Our Students Say{" "}
         </h2>
         {/*
-          FIX:
-          1. The 'flex justify-center items-center' div is no longer needed 
-             since we're using 'mx-auto' on the inner container.
-          2. The inner grid container needs a 'max-w-6xl' and 'mx-auto' to center it.
+          FIX: Removed unnecessary parent flex container and added max-w/mx-auto to the grid container
         */}
-        <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Testimonial 1 */}
-            <div
-              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
-            >
-              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-                {" "}
-                "My university has been a great place for both learning and
-                personal growth. I'm through my specialization in AI and Data
-                Science."{" "}
-              </div>
-              <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
-                {" "}
-                - P. Salkeerthana{" "}
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Testimonial 1 */}
+          <div
+            className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
+          >
+            <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
+              {" "}
+              "My university has been a great place for both learning and
+              personal growth. I'm through my specialization in AI and Data
+              Science."{" "}
             </div>
-            {/* Testimonial 2 */}
-            <div
-              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
-            >
-              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-                {" "}
-                "I am proud today that the university gave me a platform for my
-                glorious success. I recommend CatchUp2.0 to everyone."{" "}
-              </div>
-              <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
-                {" "}
-                - Pettapagu Venkateswaramma{" "}
-              </div>
+            <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
+              {" "}
+              - P. Salkeerthana{" "}
             </div>
-            {/* Testimonial 3 */}
-            <div
-              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
-            >
-              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-                {" "}
-                "I know much about my college. The orientation program, as
-                mentioned, informed me greatly and gave me the clarity I
-                needed."{" "}
-              </div>
-              <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
-                {" "}
-                - Student Name (Omitted){" "}
-              </div>
+          </div>
+          {/* Testimonial 2 */}
+          <div
+            className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
+          >
+            <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
+              {" "}
+              "I am proud today that the university gave me a platform for my
+              glorious success. I recommend CatchUp2.0 to everyone."{" "}
+            </div>
+            <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
+              {" "}
+              - Pettapagu Venkateswaramma{" "}
+            </div>
+          </div>
+          {/* Testimonial 3 */}
+          <div
+            className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
+          >
+            <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
+              {" "}
+              "I know much about my college. The orientation program, as
+              mentioned, informed me greatly and gave me the clarity I needed."{" "}
+            </div>
+            <div className={`text-right font-bold ${PRIMARY_COLOR_TEXT}`}>
+              {" "}
+              - Student Name (Omitted){" "}
             </div>
           </div>
         </div>

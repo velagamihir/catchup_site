@@ -17,7 +17,7 @@ const Main = () => {
     <div className={`min-h-screen ${LIGHT_BG} font-sans ${DARK_TEXT}`}>
       {/* Sticky CTA Sidebar */}
       <div
-        className={`fixed right-0 top-1/2 transform -translate-y-1/2 w-12 ${PRIMARY_COLOR_BG} p-2 rounded-b-lg font-bold z-[1000] text-white`}
+        className={`fixed right-0 top-1/2 transform -translate-y-1/2 w-12 ${PRIMARY_COLOR_BG} p-2 rounded-r-bg rounded-t-bg font-bold z-[1000] text-white`}
         style={{
           writingMode: "vertical-rl",
           textOrientation: "mixed",

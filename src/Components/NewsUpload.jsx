@@ -139,6 +139,7 @@ export default function ContentSubmission() {
                 <option value="CSE">CSE</option>
                 <option value="ECE">ECE</option>
                 <option value="EEE">EEE</option>
+                <option value="AID">AIDS</option>
                 <option value="CIVIL">Civil</option>
                 <option value="MECH">Mechanical</option>
                 <option value="MBA">MBA / Business</option>

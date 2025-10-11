@@ -67,7 +67,7 @@ const Main = () => {
         className={`flex justify-center flex-wrap gap-8 py-5 md:py-8 ${CARD_BG} border-b border-gray-200`}
       >
         <div>
-          <img src="./vvituLogo.png" className="h-20 w-30" alt="VVIT Logo" />
+          <img src="/vvituLogo.jpg" className="h-20 w-30" alt="VVIT Logo" />
         </div>
       </div>
       {/* Notifications Bar (Marquee) */}
@@ -347,9 +347,9 @@ const Main = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Testimonial 1 */}
             <div
-              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
+              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
             >
-              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
                 {" "}
                 "My university has been a great place for both learning and
                 personal growth. I'm through my specialization in AI and Data
@@ -362,9 +362,9 @@ const Main = () => {
             </div>
             {/* Testimonial 2 */}
             <div
-              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
+              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
             >
-              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
                 {" "}
                 "I am proud today that the university gave me a platform for my
                 glorious success. I recommend CatchUp2.0 to everyone."{" "}
@@ -376,9 +376,9 @@ const Main = () => {
             </div>
             {/* Testimonial 3 */}
             <div
-              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
+              className={`p-6 rounded-lg ${CARD_BG} shadow-md transition duration-300 hover:shadow-xl hover:translate-y-[-5px]`}
             >
-              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200">
+              <div className="bg-gray-100 p-4 rounded-lg border-l-4 border-[#FF7F00] italic mb-4 text-gray-700 transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
                 {" "}
                 "I know much about my college. The orientation program, as
                 mentioned, informed me greatly and gave me the clarity I
@@ -413,11 +413,11 @@ const Main = () => {
           <h4 className="text-lg font-semibold mb-3">CONTACT US</h4>
           <p className="text-sm">
             {" "}
-            <strong>Email:</strong> contact@catchup2.0.net{" "}
+            <strong>Email:</strong> catchup@vvit.net{" "}
           </p>
           <p className="text-sm">
             {" "}
-            <strong>Phone:</strong> 9100 305 306, 9889 404 336{" "}
+            <strong>Phone:</strong> +91 91003 05306, +91 98894 04336{" "}
           </p>
           <p className="text-sm">Nambur (V), Pedakakani (M), Guntur (Dt)</p>
         </div>

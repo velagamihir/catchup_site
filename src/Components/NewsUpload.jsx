@@ -50,7 +50,7 @@ export default function ContentSubmission() {
         if (error) throw error;
 
         const { data: publicUrlData } = supabase.storage
-          .from("catchup_uploads")
+          .from("news")
           .getPublicUrl(uniqueName);
 
         fileUrls.push(publicUrlData.publicUrl);

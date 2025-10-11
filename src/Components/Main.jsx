@@ -119,8 +119,11 @@ const Main = () => {
           <span>
             {" "}
             CatchUp Recruitment Drive for *Editors, Script Writers, Logistics,
-            Anchors, and General Crew starts 01.11.2025! Register Now |{" "}
+            Anchors, and General Crew starts 01.11.2025! Register Now
+            &nbsp;&nbsp;&nbsp;&nbsp;|
           </span>
+          &nbsp;&nbsp;&nbsp;
+          <span> The CatchUp website is finally live. </span>
         </div>
       </div>
       <div

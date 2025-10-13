@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../SupabaseClient";
 import { signOut } from "firebase/auth";
-import { app, auth } from "../firebase"; // <-- Adjust the path to your firebase.js file
+import { app, auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
+
 export default function ContentSubmission() {
   const navigate = useNavigate();
-  const logout = () => {
-    signOut(auth).then(() => {
+  const logout = async () => {
+    try {
+      await signOut(auth);
       console.log("User signed out!");
-      navigate("/");
-    });
+      // Clear session storage
+      window.sessionStorage.clear();
+      // Navigate to home page with replace to prevent going back
+      navigate("/", { replace: true });
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
   };
 
   const [branch, setBranch] = useState("");
@@ -88,16 +95,21 @@ export default function ContentSubmission() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-sans">
-      {/* Header */}
-      <header className="bg-white px-8 py-4 flex justify-between items-center border-b-2 border-[#FF7F00] shadow-sm">
+      {/* Header - Responsive */}
+      <header className="bg-white px-4 sm:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 border-b-2 border-[#FF7F00] shadow-sm">
         <div className="text-2xl font-bold">
           CatchUp<span className="text-[#FF7F00] text-3xl">2.0</span>
         </div>
-        <div>
-          <p>Welcome! {window.sessionStorage.getItem("username")}</p>
+        <div className="text-sm sm:text-base text-center sm:text-left">
+          <p className="text-gray-700">
+            Welcome!{" "}
+            <span className="font-semibold">
+              {window.sessionStorage.getItem("username")}
+            </span>
+          </p>
         </div>
         <button
-          className="hover:text-[#FF7F00]  px-4 py-2 rounded-md duration-300"
+          className="hover:text-[#FF7F00] px-4 py-2 rounded-md duration-300 border border-gray-300 hover:border-[#FF7F00] text-sm sm:text-base"
           onClick={logout}
         >
           Logout
@@ -105,27 +117,29 @@ export default function ContentSubmission() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow py-12 px-6 md:px-12 lg:px-24">
-        <div className="max-w-3xl mx-auto bg-white p-10 rounded-xl shadow-xl border-t-4 border-[#FF7F00]">
-          <h2 className="text-3xl font-bold text-center text-[#FF7F00] mb-2">
+      <main className="flex-grow py-8 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-24">
+        <div className="max-w-3xl mx-auto bg-white p-6 sm:p-10 rounded-xl shadow-xl border-t-4 border-[#FF7F00]">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-[#FF7F00] mb-2">
             CatchUp 2.0 Content Submission 📤
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 mt-6">
             {/* Full Name */}
             <div>
-              <label className="block mb-2 font-semibold">Your Full Name</label>
+              <label className="block mb-2 font-semibold text-sm sm:text-base">
+                Your Full Name
+              </label>
               <input
                 type="text"
                 name="contributor_name"
                 required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none text-sm sm:text-base"
               />
             </div>
 
             {/* Branch */}
             <div>
-              <label className="block mb-2 font-semibold">
+              <label className="block mb-2 font-semibold text-sm sm:text-base">
                 Academic Branch
               </label>
               <select
@@ -133,7 +147,7 @@ export default function ContentSubmission() {
                 value={branch}
                 onChange={handleBranchChange}
                 required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none text-sm sm:text-base"
               >
                 <option value="">-- Select Branch --</option>
                 <option value="CSE">CSE</option>
@@ -150,14 +164,14 @@ export default function ContentSubmission() {
 
               {branch === "Other" && (
                 <div className="mt-3 bg-gray-100 p-3 rounded-lg">
-                  <label className="block mb-1 font-semibold">
+                  <label className="block mb-1 font-semibold text-sm sm:text-base">
                     Other Branch (Optional)
                   </label>
                   <input
                     type="text"
                     name="custom_branch"
                     placeholder="Enter custom branch name"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none text-sm sm:text-base"
                   />
                 </div>
               )}
@@ -165,7 +179,7 @@ export default function ContentSubmission() {
 
             {/* Designation */}
             <div>
-              <label className="block mb-2 font-semibold">
+              <label className="block mb-2 font-semibold text-sm sm:text-base">
                 Designation / Role
               </label>
               <select
@@ -173,7 +187,7 @@ export default function ContentSubmission() {
                 value={designation}
                 onChange={handleDesignationChange}
                 required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none text-sm sm:text-base"
               >
                 <option value="">-- Select Designation --</option>
                 <option value="Faculty">Faculty</option>
@@ -191,14 +205,14 @@ export default function ContentSubmission() {
 
               {designation === "Other" && (
                 <div className="mt-3 bg-gray-100 p-3 rounded-lg">
-                  <label className="block mb-1 font-semibold">
+                  <label className="block mb-1 font-semibold text-sm sm:text-base">
                     Other Designation (Optional)
                   </label>
                   <input
                     type="text"
                     name="custom_designation"
                     placeholder="Enter custom role/designation"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none text-sm sm:text-base"
                   />
                 </div>
               )}
@@ -206,30 +220,32 @@ export default function ContentSubmission() {
 
             {/* Date */}
             <div>
-              <label className="block mb-2 font-semibold">Date</label>
+              <label className="block mb-2 font-semibold text-sm sm:text-base">
+                Date
+              </label>
               <input
                 type="date"
                 name="upload_date"
                 required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none text-sm sm:text-base"
               />
             </div>
 
             {/* Description */}
             <div>
-              <label className="block mb-2 font-semibold">
+              <label className="block mb-2 font-semibold text-sm sm:text-base">
                 Description / Notes
               </label>
               <textarea
                 name="description"
                 placeholder="Briefly describe the content..."
-                className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none min-h-[120px]"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none min-h-[120px] text-sm sm:text-base"
               ></textarea>
             </div>
 
             {/* File Upload */}
             <div>
-              <label className="block mb-2 font-semibold">
+              <label className="block mb-2 font-semibold text-sm sm:text-base">
                 Upload Files (Select multiple files)
               </label>
               <input
@@ -237,7 +253,7 @@ export default function ContentSubmission() {
                 name="content_files[]"
                 multiple
                 required
-                className="w-full p-3 border border-gray-300 rounded-lg cursor-pointer focus:border-[#FF7F00] focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg cursor-pointer focus:border-[#FF7F00] focus:outline-none text-sm sm:text-base"
               />
             </div>
 
@@ -245,7 +261,7 @@ export default function ContentSubmission() {
             <button
               type="submit"
               disabled={uploading}
-              className={`w-full bg-[#FF7F00] text-white py-3 rounded-lg text-lg font-bold hover:bg-orange-600 transition-transform ${
+              className={`w-full bg-[#FF7F00] text-white py-3 rounded-lg text-base sm:text-lg font-bold hover:bg-orange-600 transition-transform ${
                 uploading
                   ? "opacity-70 cursor-not-allowed"
                   : "hover:-translate-y-0.5"
@@ -258,7 +274,7 @@ export default function ContentSubmission() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white text-center text-gray-600 py-4 border-t-2 border-[#FF7F00]">
+      <footer className="bg-white text-center text-gray-600 py-4 border-t-2 border-[#FF7F00] text-sm sm:text-base">
         © 2025 CatchUp2.0. All Rights Reserved.
       </footer>
     </div>

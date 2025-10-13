@@ -6,13 +6,16 @@ import Login from "./Components/Login";
 import NewsUpload from "./Components/NewsUpload";
 import Team from "./Components/Team";
 import RecentUploads from "./Components/RecentUploads";
+import ProtectedRoute from "./Components/ProtectedRoute";
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/newsUpload" element={<NewsUpload />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/newsUpload" element={<NewsUpload />} />
+        </Route>
         <Route path="/team" element={<Team />} />
         <Route path="/recentUploads" element={<RecentUploads />} />
       </Routes>

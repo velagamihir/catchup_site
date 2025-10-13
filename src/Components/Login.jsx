@@ -1,15 +1,16 @@
+// src/pages/Login.jsx
 import React, { useState } from "react";
-// 1. Import necessary Firebase Auth functions and the auth instance
+// Import necessary Firebase Auth functions and the auth instance
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { app, auth } from "../firebase"; // <-- Adjust the path to your firebase.js file
-import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase"; // <-- Removed 'app'
+import { useNavigate, Link } from "react-router-dom"; // <-- Added 'Link'
 
 function Login() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   /**
-   * 2. Function to handle Google Sign-In using Firebase
+   * Function to handle Google Sign-In using Firebase
    */
   const handleGoogleLogin = async () => {
     setLoading(true);
@@ -19,22 +20,22 @@ function Login() {
       // Open the Google sign-in popup
       const result = await signInWithPopup(auth, provider);
 
-      // The result object contains the user's credential and user information
+      // Login successful!
       const user = result.user;
       console.log("Firebase Google Login Successful! User:", user);
 
-      // Extract details (e.g., for showing an alert or redirecting)
-      const displayName = user.displayName;
-      window.sessionStorage.setItem("username", displayName);
-      alert(`Welcome, ${displayName}! Login successful with Firebase.`);
-      navigate("/newsUpload");
+      // 🌟 Navigate to the news upload page, replacing the login page in history
+      navigate("/newsUpload", { replace: true });
     } catch (error) {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
 
       console.error("Firebase Google Login Failed:", errorCode, errorMessage);
-      alert(`Login failed: ${errorMessage}. Please check console for details.`);
+
+      // 🌟 Better error handling (using state or a toast library is ideal,
+      // but sticking with alert for minimal change)
+      alert(`Login failed (${errorCode}): ${errorMessage}.`);
     } finally {
       setLoading(false);
     }
@@ -47,12 +48,13 @@ function Login() {
         <h1 className="text-2xl font-bold">
           CatchUp<span className="text-[#FF7F00] text-3xl">2.0</span>
         </h1>
-        <a
-          href="index.html"
+        {/* 🌟 Changed <a> to <Link> for SPA navigation */}
+        <Link
+          to="/" // Go to the root path of the application
           className="text-gray-800 font-semibold hover:text-[#FF7F00] transition"
         >
           ← Back to Home
-        </a>
+        </Link>
       </header>
 
       {/* -------------------------------------------------------------------------------------------------- */}
@@ -61,7 +63,7 @@ function Login() {
         <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-8 border-t-4 border-[#FF7F00] text-center">
           <h2 className="text-2xl font-bold mb-3">Faculty Login Portal</h2>
           <div className="h-10"></div>
-          {/* 4. Attach the Firebase handler to the button's onClick */}
+          {/* Attach the Firebase handler to the button's onClick */}
           <button
             onClick={handleGoogleLogin}
             disabled={loading} // Disable button while the login process is running

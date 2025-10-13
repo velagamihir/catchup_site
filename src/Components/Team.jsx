@@ -1,9 +1,9 @@
 import React from "react";
 
 const heads = [
-  { name: "Head 1 Name", role: "Chief Editor", img: "head1.jpg" },
-  { name: "Head 2 Name", role: "Managing Editor", img: "head2.jpg" },
-  { name: "Head 3 Name", role: "Operations Lead", img: "head3.jpg" },
+  { name: "Sujeeth", role: "Chief Editor", img: "/raghuSir.jpg" },
+  { name: "Yamini", role: "Managing Editor", img: "/raghuSir.jpg" },
+  { name: "Bharath", role: "Operations Lead", img: "/raghuSir.jpg" },
 ];
 
 const crew = Array.from({ length: 22 }, (_, i) => ({
@@ -20,7 +20,7 @@ const crew = Array.from({ length: 22 }, (_, i) => ({
     "Video Editor",
     "Researcher",
   ][i % 10],
-  img: `crew${i + 1}.jpg`,
+  img: `./crew/crew${i + 1}.jpg`,
 }));
 
 export default function Team() {
@@ -30,9 +30,6 @@ export default function Team() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* ---------------------------------------------------- */}
-      {/* 1. Navigation Bar */}
-      {/* ---------------------------------------------------- */}
       <header
         className={`sticky top-0 z-50 flex justify-between items-center bg-white p-4 md:px-12 shadow-md border-b-2 border-orange-500`}
       >
@@ -118,9 +115,6 @@ export default function Team() {
         ))}
       </section>
 
-      {/* ---------------------------------------------------- */}
-      {/* Crew Section */}
-      {/* ---------------------------------------------------- */}
       <section className="px-6 md:px-16 mb-24">
         <h2
           className={`text-3xl font-bold text-center mb-12 ${PRIMARY_COLOR_TEXT} border-b-2 border-orange-200 inline-block pb-2`}

@@ -176,7 +176,7 @@ const Main = () => {
                 href={item.video_link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`rounded-lg overflow-hidden shadow-lg ${CARD_BG} transition duration -300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
+                className={`rounded-lg overflow-hidden shadow-lg ${CARD_BG} transition duration-500 hover:shadow-2xl hover:translate-y-[-15px] border border-gray-200 delay-100 `}
               >
                 <div
                   className={`h-44 bg-gray-200 flex items-center justify-center text-xl font-bold ${PRIMARY_COLOR_TEXT}`}

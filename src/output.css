@@ -919,6 +919,12 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .delay-100 {
+    transition-delay: 100ms;
+  }
+  .delay-150 {
+    transition-delay: 150ms;
+  }
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
@@ -1014,6 +1020,30 @@
     &:hover {
       @media (hover: hover) {
         --tw-translate-y: -5px;
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .hover\:translate-y-\[-10px\] {
+    &:hover {
+      @media (hover: hover) {
+        --tw-translate-y: -10px;
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .hover\:translate-y-\[-15px\] {
+    &:hover {
+      @media (hover: hover) {
+        --tw-translate-y: -15px;
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .hover\:translate-y-\[-100px\] {
+    &:hover {
+      @media (hover: hover) {
+        --tw-translate-y: -100px;
         translate: var(--tw-translate-x) var(--tw-translate-y);
       }
     }

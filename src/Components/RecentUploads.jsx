@@ -55,7 +55,7 @@ const RecentUploads = () => {
           <a href="/team" className={`hover:${PRIMARY_COLOR_TEXT}`}>
             Team
           </a>
-          <a href="#contact" className={`hover:${PRIMARY_COLOR_TEXT}`}>
+          <a href="/#contact" className={`hover:${PRIMARY_COLOR_TEXT}`}>
             Contact
           </a>
         </nav>

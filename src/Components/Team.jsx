@@ -58,9 +58,6 @@ export default function Team() {
         </div>
       </header>
 
-      {/* ---------------------------------------------------- */}
-      {/* Header */}
-      {/* ---------------------------------------------------- */}
       <section className="text-center py-16 px-4">
         <h1
           className={`text-5xl font-extrabold ${PRIMARY_COLOR_TEXT} uppercase tracking-tight md:tracking-wider`}
@@ -74,9 +71,6 @@ export default function Team() {
         </p>
       </section>
 
-      {/* ---------------------------------------------------- */}
-      {/* Heads Section — Upgraded with Gradient Glows */}
-      {/* ---------------------------------------------------- */}
       <section className="flex flex-wrap justify-center gap-12 mb-28 px-4">
         {heads.map((head, index) => (
           <div

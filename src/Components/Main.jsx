@@ -24,7 +24,7 @@ const Main = () => {
         .from("catchup_media")
         .select("*")
         .order("created_at", { ascending: false })
-        .limit(3);
+        .limit(4);
       console.log(data);
       if (error) {
         console.error("Error fetching media:", error);
@@ -62,16 +62,15 @@ const Main = () => {
     <div className={`min-h-screen ${LIGHT_BG} font-sans ${DARK_TEXT}`}>
       {/* Sticky CTA Sidebar */}
       <div
-        className={`fixed right-0 top-1/2 transform -translate-y-1/2 w-12 ${PRIMARY_COLOR_BG} p-2 rounded-r-bg rounded-t-bg font-bold z-[1000] text-white`}
+        className={`fixed right-0 top-1/2 transform -translate-y-1/2 w-12 ${PRIMARY_COLOR_BG} p-2 rounded-lg font-bold z-[1000] text-white`}
         style={{
           writingMode: "vertical-rl",
           textOrientation: "mixed",
           transform: "translateY(-50%) rotate(180deg)",
         }}
       >
-        <a href="#contact" className="hover:underline">
-          {" "}
-          CONTACT US / LEARN MORE{" "}
+        <a href="/recentUploads" className="hover:underline">
+          View Recent Uploads
         </a>
       </div>
       {/* Header / Sticky Navigation Bar */}
@@ -170,14 +169,14 @@ const Main = () => {
         </h2>
 
         <div className="flex items-center justify-around">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left w-250">
+          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 text-left w-full">
             {latestMedia.map((item, idx) => (
               <a
                 key={idx}
                 href={item.video_link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`rounded-lg overflow-hidden shadow-lg ${CARD_BG} transition duration-300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
+                className={`rounded-lg overflow-hidden shadow-lg ${CARD_BG} transition duration -300 hover:shadow-xl hover:translate-y-[-5px] border border-gray-200`}
               >
                 <div
                   className={`h-44 bg-gray-200 flex items-center justify-center text-xl font-bold ${PRIMARY_COLOR_TEXT}`}
@@ -198,12 +197,6 @@ const Main = () => {
               </a>
             ))}
           </div>
-          <button
-            onClick={() => navigate("/recentUploads")}
-            className={`h-16 w-50 ${PRIMARY_COLOR_BG} text-white font-bold text-l rounded-4xl hover:${PRIMARY_COLOR_TEXT} hover:bg-white border -4 border transition-all duration-500 ease-in-out cursor-pointer hover:shadow-2xl`}
-          >
-            View More
-          </button>
         </div>
       </section>
       <section
@@ -330,9 +323,6 @@ const Main = () => {
           </div>
         </div>
       </section>
-      {/* ---------------------------------------------------- */}
-      {/* --- End of The CatchUp Corner Section --- */}
-      {/* ---------------------------------------------------- */}
       <section id="team" className="py-16 md:py-20 px-4 md:px-12 text-center">
         <h2
           className={`text-4xl font-bold inline-block pb-1 mb-10 ${PRIMARY_COLOR_TEXT} border-b-4 border-[#FF7F00]`}

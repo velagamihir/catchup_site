@@ -25,7 +25,6 @@ const Main = () => {
         .select("*")
         .order("created_at", { ascending: false })
         .limit(4);
-      console.log(data);
       if (error) {
         console.error("Error fetching media:", error);
       } else {
@@ -46,10 +45,12 @@ const Main = () => {
       const { data, error } = await supabase
         .from("testimonials")
         .select("*")
-        .limit(3); // last 3 testimonials
-
+        .order("id", { ascending: false })
+        .limit(3);
+      console.log("Data:", data);
+      console.log("Error:", error);
       if (error) {
-        console.error("Error fetching testimonials:", error);
+        console.error("Error fetching testimonials: ", error);
       } else {
         setTestimonials(data);
       }
@@ -58,9 +59,7 @@ const Main = () => {
     fetchTestimonials();
   }, []);
   return (
-    // Corrected JSX String Interpolation
     <div className={`min-h-screen ${LIGHT_BG} font-sans ${DARK_TEXT}`}>
-      {/* Sticky CTA Sidebar */}
       <div
         className={`fixed right-0 top-1/2 transform -translate-y-1/2 w-12 ${PRIMARY_COLOR_BG} p-2 rounded-lg font-bold z-[1000] text-white`}
         style={{

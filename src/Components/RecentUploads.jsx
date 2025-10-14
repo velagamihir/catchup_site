@@ -21,7 +21,7 @@ const RecentUploads = () => {
         .from("catchup_media")
         .select("*")
         .order("created_at", { ascending: false })
-        .limit(13);
+        .limit(50);
 
       if (error) console.error("Error fetching uploads:", error);
       else setUploads(data);

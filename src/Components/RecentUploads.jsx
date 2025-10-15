@@ -26,7 +26,6 @@ const RecentUploads = () => {
       if (error) console.error("Error fetching uploads:", error);
       else setUploads(data);
     }
--
     fetchUploads();
   }, []);
 

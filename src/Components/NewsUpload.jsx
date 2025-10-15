@@ -190,16 +190,12 @@ export default function ContentSubmission() {
                 className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#FF7F00] focus:outline-none text-sm sm:text-base"
               >
                 <option value="">-- Select Designation --</option>
-                <option value="Faculty">Faculty</option>
-                <option value="Editor">Editor</option>
-                <option value="Script_Writer">Script Writer</option>
-                <option value="Anchor">Anchor</option>
-                <option value="Logistics">Logistics</option>
-                <option value="General_Crew">General Crew</option>
-                <option value="Final_Year">Final Year Student</option>
-                <option value="Third_Year">Third Year Student</option>
-                <option value="Second_Year">Second Year Student</option>
-                <option value="First_Year">First Year Student</option>
+                <option value="Dean">Dean</option>
+                <option value="HOD">Head of the Department</option>
+                <option value="Asst. Professor">Assisstant Professor</option>
+                <option value="Associate Professor">Associate Professor</option>
+                <option value="Professor">Professor</option>
+                <option value="Non-teaching Staff">Non-teaching Staff</option>
                 <option value="Other">Other / Custom Entry...</option>
               </select>
 

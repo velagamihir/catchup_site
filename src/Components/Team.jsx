@@ -16,6 +16,16 @@ const facultyCoordinator = {
   img: "/ch_raghavendra.jpg", // Placeholder
 };
 
+// 2.5. PRO and Camera Heads (NEW LEVEL)
+const proAndCameraHeads = [
+  {
+    name: "Karthik",
+    role: "PRO (Public Relations Officer)",
+    img: "/suresh_pro.jpg",
+  }, // Placeholder
+  { name: "Surendra", role: "Camera", img: "/pavan_camera.jpg" }, // Placeholder
+];
+
 // 3. Executive Leadership
 const executiveHeads = [
   { name: "Sujeeth", role: "Executive Chief", img: "/sujeeth.jpg" }, // Placeholder
@@ -25,21 +35,21 @@ const executiveHeads = [
 
 // 4. Organizing Head
 const organizingHead = {
-  name: "Anil",
+  name: "Nishant",
   role: "Organizing Head",
   img: "/anil.jpg", // Placeholder
 };
 
 // 5. Bulletin Heads (rendered beside SPOC)
 const bulletinHeads = [
-  { name: "Priya", role: "Main News Bulletin Head", img: "/priya.jpg" }, // Placeholder
-  { name: "Kiran", role: "Honest Bytes Head", img: "/kiran.jpg" }, // Placeholder
-  { name: "Sai", role: "Short Bytes Head", img: "/sai.jpg" }, // Placeholder
+  { name: "Mihir Velaga", role: "Main News Bulletin Head", img: "/priya.jpg" }, // Placeholder
+  { name: "Vivek Sunkara", role: "Honest Bytes Head", img: "/kiran.jpg" }, // Placeholder
+  { name: "Poojitha Jampani", role: "Short Bytes Head", img: "/sai.jpg" }, // Placeholder
 ];
 
 // 5. Single Point of Contact (SPOC) - Non-Faculty, rendered beside Bulletin Heads
 const spoc = {
-  name: "Raghav Sharma",
+  name: "Pavan",
   role: "Team SPOC",
   img: "/raghav.jpg", // Placeholder
   phone: "+91 99887 76655", // Placeholder
@@ -247,6 +257,20 @@ export default function Team() {
         </div>
       </section>
 
+      {/* 2.5. PRO & Camera Heads (NEW SECTION) */}
+      <section className="text-center py-8 mb-16 px-4 border-b border-orange-100">
+        <h2
+          className={`text-4xl font-extrabold mb-12 ${PRIMARY_COLOR_TEXT} uppercase`}
+        >
+          PR & Visual Media Heads
+        </h2>
+        <div className="flex flex-wrap justify-center gap-8">
+          {proAndCameraHeads.map((head, index) => (
+            <MemberCard key={index} member={head} sizeClass="w-32 h-32" />
+          ))}
+        </div>
+      </section>
+
       {/* 3. Executive Leadership */}
       <section className="text-center py-8 mb-16 px-4 border-b border-orange-100">
         <h2
@@ -298,7 +322,7 @@ export default function Team() {
         <h2
           className={`text-4xl font-extrabold mb-12 ${PRIMARY_COLOR_TEXT} uppercase`}
         >
-          Core Clusters
+          Core Clusters ({totalClusterCount} Members Total)
         </h2>
         <div className="space-y-16">
           {clusters.map((cluster, clusterIndex) => (
